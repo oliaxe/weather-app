@@ -1,13 +1,55 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Inter&family=Kanit:wght@100;200&display=swap');
+
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
+  font-family: 'Kanit', sans-serif;
+    -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 50px;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.App{
+  padding: 50px;
+  border-color: black;
+  background-image: url('./images/weather-images.jpg');
+  width: 700px;
+  height: 200px;
+  border-radius: 50px;
+}
+.search--city{
+  border-radius: 5px;
+  font-family: 'Kanit', sans-serif;
+  margin: 20px;
+  padding:5px;
+}
+
+.form--button{
+  font-weight: 400;
+  font-family: 'Kanit', sans-serif;
+  margin: 20px;
+  margin-top: 0px;
+  border-radius: 5px;
+}
+
+.temp{
+  margin-left: 20px;
+  font-size: xx-large;
+  color: white;
+  font-weight: bolder;
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+
+.condition{
+  padding-top: 0;
+  margin-top: 0;
+  margin-left: 20px;
+  color: white;
 }
