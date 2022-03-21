@@ -118,3 +118,16 @@ code {
   position: sticky;
 
 }
+
+.arc{
+  padding: 0px;
+  margin: 0px;
+  text-transform: capitalize;
+}
+
+.getlocal{
+  margin-top: 90px;
+  padding: 0px;
+}
+
+.previous{}

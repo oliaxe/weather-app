@@ -1,5 +1,7 @@
 import React from "react";
 
+let counter = 0;
+
 export default function Search() {
   const [cityName, setCityName] = React.useState("");
   const [temp, setTemp] = React.useState("");
@@ -7,13 +9,13 @@ export default function Search() {
 
   async function searchCity() {
     const response = await fetch(
-      `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=IEAGHWAxYGtT9Vy5DC5MIsDgGUANmeMM&q=${cityName}`
+      `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=CIA3JkmAuyJpvFgI9c1JQU0QnC9o6zjA&q=${cityName}`
     );
     const data = await response.json();
     const firstCityKey = data[0].Key;
     setCityName(data[0].LocalizedName);
     const weatherResponse = await fetch(
-      `http://dataservice.accuweather.com/currentconditions/v1/${firstCityKey}?apikey=IEAGHWAxYGtT9Vy5DC5MIsDgGUANmeMM`
+      `http://dataservice.accuweather.com/currentconditions/v1/${firstCityKey}?apikey=CIA3JkmAuyJpvFgI9c1JQU0QnC9o6zjA`
     );
     const weatherData = await weatherResponse.json();
     const firstWeather = weatherData[0];
@@ -22,9 +24,22 @@ export default function Search() {
   }
 
   function getCity(event) {
+    var archive = [],
+    keys = Object.keys(localStorage),
+    i = 0, key;
+
+  for (; key = keys[i]; i++) {
+    archive.push(localStorage.getItem(key));
+  }
+    console.log(archive);
+
     setCityName(event.target.value);
     searchCity();
+
+
+    localStorage.setItem(`city${archive.length}`, cityName);
     console.log(cityName);
+    window.location.reload(false);
   }
 
   function handleChange(event) {
