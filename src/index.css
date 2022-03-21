@@ -19,21 +19,37 @@ code {
 .App{
   padding: 50px;
   border-color: black;
-  background-image: url('./images/weather-images.jpg');
+  background-image: url("./images/jonathan-bowers-BqKdvJ8a5TI-unsplash.jpg");
   width: 700px;
-  height: 200px;
+  height: 600px;
   border-radius: 50px;
   flex-direction: row;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
 }
 .showInfo{
-  
+  background-color: none;
+  border-radius: 20px;
+  width: 150px;
+  padding: 15px;
+  width: 180px;
+  height: 128px;
+  float: right;
+  margin-top: 0px;
+  margin-right: 100px;
 }
+.inputAndButton
+{
+  float:left;
+}
+
+
 .search--city{
   border-radius: 5px;
   font-family: 'Kanit', sans-serif;
   margin: 20px;
-  padding:0px;
+  padding:10px;
+  font-size: large;
+  background: rgb(197, 202, 202);
 }
 
 .form--button{
@@ -42,6 +58,17 @@ code {
   margin: 20px;
   margin-top: 0px;
   border-radius: 5px;
+  margin-bottom: 3px;
+  padding: 10px;
+  width: 150px;
+  background: rgb(173, 181, 181);
+
+}
+.cityInput{
+  margin-left: 20px;
+  font-size: xx-large;
+  margin-bottom: 0px;
+  margin-top: 0px;
 }
 
 .temp{
@@ -53,6 +80,10 @@ code {
   margin-top: 10px;
 }
 
+.showInfo > .temp{
+  margin-top: 0px;
+}
+
 .condition{
   padding-top: 0;
   margin-top: 0;
@@ -60,30 +91,30 @@ code {
   color: white;
 }
 
+.cityInput{
+  color: white;
+}
+
 .cityName{
   font-size: larger;
+  padding-left: 16px;
 }
 .bigCities{
-  margin-top: 10px;
-  background-color: rgb(175, 201, 193);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(25,31,59,1) 0%, rgba(30,37,64,1) 0%, rgba(2,0,36,1) 0%, rgba(3,1,37,1) 0%, rgba(128,170,159,1) 0%, rgba(50,64,83,1) 0%, rgba(151,200,181,1) 60%, rgba(156,201,144,1) 100%, rgba(0,212,255,1) 100%);
   width: 150px;
   padding: 5px;
   border-radius: 30px;
-  padding-left: 50px;
   color: rgb(255, 255, 255);
   margin: 5px;
-  align-items: center;
-  position: sticky;
-
+  margin-top: 40px;
 }
 
-.bigCitiesArea{
-  display: inline-block;
+.container{
   width: 100%;
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  position: sticky;
   top: 0;
-  margin-top: 60px;
+  flex-wrap: wrap;
+  position: sticky;
+
 }

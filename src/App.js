@@ -7,13 +7,23 @@ function App() {
       <header className="App-header">
       <Search/>
       </header>
-      <div className="bigCitiesArea">
+      <div className="container">
       <BigCities
       city="Longyearbyen"/>
       <BigCities
       city="London"/>
       <BigCities
       city="Stockholm"/>
+      <BigCities
+      city="Mumbai"/>
+      <BigCities
+      city="Hanoi"/>
+      <BigCities
+      city="Rome"/>     
+       <BigCities
+      city="Paris"/>
+      <BigCities
+      city="Berlin"/>
       </div>
     </div>
   );

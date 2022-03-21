@@ -7,14 +7,14 @@ export default function BigCities(props) {
 
   async function searchCity() {
     const response = await fetch(
-      `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=roQiBhAnmtXRERx2hBGOEarAhAsOe05v&q=${props.city}`
+      `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=IEAGHWAxYGtT9Vy5DC5MIsDgGUANmeMM&q=${props.city}`
     );
     const data = await response.json();
     const cityKey = data[0].Key;
     setCity(data[0].LocalizedName);
 
     const weatherResponse = await fetch(
-      `http://dataservice.accuweather.com/currentconditions/v1/${cityKey}?apikey=roQiBhAnmtXRERx2hBGOEarAhAsOe05v`
+      `http://dataservice.accuweather.com/currentconditions/v1/${cityKey}?apikey=IEAGHWAxYGtT9Vy5DC5MIsDgGUANmeMM`
     );
     const weatherData = await weatherResponse.json();
     const weather = weatherData[0];
@@ -28,7 +28,7 @@ export default function BigCities(props) {
   return (
     <div className="bigCities">
       <p className="cityName">{city}</p>
-      <p className="temp">{tempBigCity}</p>
+      <p className="temp">{tempBigCity} °C</p>
       <p className="condition">{conditonBigCity}</p>
     </div>
   );

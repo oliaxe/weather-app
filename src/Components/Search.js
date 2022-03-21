@@ -7,13 +7,13 @@ export default function Search() {
 
   async function searchCity() {
     const response = await fetch(
-      `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=roQiBhAnmtXRERx2hBGOEarAhAsOe05v&q=${cityName}`
+      `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=IEAGHWAxYGtT9Vy5DC5MIsDgGUANmeMM&q=${cityName}`
     );
     const data = await response.json();
     const firstCityKey = data[0].Key;
-
+    setCityName(data[0].LocalizedName);
     const weatherResponse = await fetch(
-      `http://dataservice.accuweather.com/currentconditions/v1/${firstCityKey}?apikey=roQiBhAnmtXRERx2hBGOEarAhAsOe05v`
+      `http://dataservice.accuweather.com/currentconditions/v1/${firstCityKey}?apikey=IEAGHWAxYGtT9Vy5DC5MIsDgGUANmeMM`
     );
     const weatherData = await weatherResponse.json();
     const firstWeather = weatherData[0];
@@ -24,6 +24,7 @@ export default function Search() {
   function getCity(event) {
     setCityName(event.target.value);
     searchCity();
+    console.log(cityName);
   }
 
   function handleChange(event) {
@@ -32,6 +33,7 @@ export default function Search() {
 
   return (
     <div className="searchForm">
+      <div className="inputAndButton">
       <input
         type="text"
         placeholder="City"
@@ -44,7 +46,9 @@ export default function Search() {
       <button className="form--button" onClick={getCity}>
         Search
       </button>
+      </div>
       <div className="showInfo">
+        {temp && <p className="cityInput">{cityName}</p>}
         {temp && <p className="temp">{temp} °C</p>}
         {temp && <p className="condition">{condition}</p>}
       </div>
