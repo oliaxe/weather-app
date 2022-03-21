@@ -7,14 +7,14 @@ export default function BigCities(props) {
 
   async function searchCity() {
     const response = await fetch(
-      `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=CIA3JkmAuyJpvFgI9c1JQU0QnC9o6zjA&q=${props.city}`
+      `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=XBe1hMHGbKqdVPHtsLsRRGJ1lcxQLkCR&q=${props.city}`
     );
     const data = await response.json();
     const cityKey = data[0].Key;
     setCity(data[0].LocalizedName);
 
     const weatherResponse = await fetch(
-      `http://dataservice.accuweather.com/currentconditions/v1/${cityKey}?apikey=CIA3JkmAuyJpvFgI9c1JQU0QnC9o6zjA`
+      `http://dataservice.accuweather.com/currentconditions/v1/${cityKey}?apikey=XBe1hMHGbKqdVPHtsLsRRGJ1lcxQLkCR`
     );
     const weatherData = await weatherResponse.json();
     const weather = weatherData[0];

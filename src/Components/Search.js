@@ -9,13 +9,13 @@ export default function Search() {
 
   async function searchCity() {
     const response = await fetch(
-      `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=CIA3JkmAuyJpvFgI9c1JQU0QnC9o6zjA&q=${cityName}`
+      `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=XBe1hMHGbKqdVPHtsLsRRGJ1lcxQLkCR&q=${cityName}`
     );
     const data = await response.json();
     const firstCityKey = data[0].Key;
     setCityName(data[0].LocalizedName);
     const weatherResponse = await fetch(
-      `http://dataservice.accuweather.com/currentconditions/v1/${firstCityKey}?apikey=CIA3JkmAuyJpvFgI9c1JQU0QnC9o6zjA`
+      `http://dataservice.accuweather.com/currentconditions/v1/${firstCityKey}?apikey=XBe1hMHGbKqdVPHtsLsRRGJ1lcxQLkCR`
     );
     const weatherData = await weatherResponse.json();
     const firstWeather = weatherData[0];
@@ -39,7 +39,6 @@ export default function Search() {
 
     localStorage.setItem(`city${archive.length}`, cityName);
     console.log(cityName);
-    window.location.reload(false);
   }
 
   function handleChange(event) {
