@@ -7,7 +7,8 @@ body {
   font-family: 'Kanit', sans-serif;
     -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding: 50px;
+  padding: 30px;
+  
 }
 
 code {
@@ -22,12 +23,17 @@ code {
   width: 700px;
   height: 200px;
   border-radius: 50px;
+  flex-direction: row;
+  margin-bottom: 60px;
+}
+.showInfo{
+  
 }
 .search--city{
   border-radius: 5px;
   font-family: 'Kanit', sans-serif;
   margin: 20px;
-  padding:5px;
+  padding:0px;
 }
 
 .form--button{
@@ -52,4 +58,32 @@ code {
   margin-top: 0;
   margin-left: 20px;
   color: white;
+}
+
+.cityName{
+  font-size: larger;
+}
+.bigCities{
+  margin-top: 10px;
+  background-color: rgb(175, 201, 193);
+  width: 150px;
+  padding: 5px;
+  border-radius: 30px;
+  padding-left: 50px;
+  color: rgb(255, 255, 255);
+  margin: 5px;
+  align-items: center;
+  position: sticky;
+
+}
+
+.bigCitiesArea{
+  display: inline-block;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  margin-top: 60px;
 }
