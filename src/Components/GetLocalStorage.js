@@ -1,11 +1,10 @@
 import React from "react";
 import Search from "./Search";
-import ShowPreviousButton from "./ShowPreviousButton";
+import ShowPrevious from "./ShowPrevious";
+import HeadComponent from "./HeadComponent";
 
-export default function GetLocalStorage(){
+export default function GetLocalStorage(props){
     
-    const [searches, setSearches] = React.useState([])
-    const [show, setShow] = React.useState(true)
 
     let archive = [],
     keys = Object.keys(localStorage),
@@ -17,23 +16,17 @@ export default function GetLocalStorage(){
     console.log(archive);
 
     React.useEffect(() =>
-    setSearches(archive.map((arc) => arc)
-
+    props.setSearches(archive.map((arc) => arc)
     ), [])
 
-    function showPrevious(){
-        setShow(prevShow => !prevShow)
-       }
 
-
-  console.log(searches);
+  console.log(props.searches);
     
-
     return (
         <div>
-        <button className="showPrevious" onClick={showPrevious}>Show previous searches</button>
-        {show && <ShowPreviousButton
-        searches={searches}
+        <button className="showPrevious" onClick={props.showPrevious}>Show previous searches</button>
+        {props.show && <ShowPrevious
+        searches={archive}
         />}
 
         </div>

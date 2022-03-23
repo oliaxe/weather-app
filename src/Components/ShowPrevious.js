@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ShowPreviousButton(props){
+export default function ShowPrevious(props){
 
 
 

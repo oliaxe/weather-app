@@ -1,10 +1,12 @@
-import Search from "./Components/Search";
-import BigCities from "./Components/BigCities";
-import GetLocalStorage from "./Components/GetLocalStorage";
 import HeadComponent from "./Components/HeadComponent"
 import React from "react";
 
 function App() {
+
+  React.useEffect(function() {
+    localStorage.clear()
+  }, [])
+
 
   const [searches, setSearches] = React.useState([])
 
